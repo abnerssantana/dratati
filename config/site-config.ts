@@ -40,7 +40,7 @@ const GridItems: GridItemInterface[] = [
     icon: "whatsapp",
     description: "Entre em contato agora e agende uma consulta.",
     color: "#25d366",
-    buttonTitle: "17 99743-3628",
+    buttonTitle: "17 99141-4224",
     buttonLink:
       "https://api.whatsapp.com/send?phone=5517991414224",
     buttonSecondaryText: "",
@@ -50,14 +50,14 @@ const GridItems: GridItemInterface[] = [
     type: "equipment",
     title:
       "Essa combinação de verde com dourado tem seu charme.",
-    images: ["/azul/baixo-azul1.jpg", "/azul/baixo-azul2.jpg", "/azul/baixo-azul3.jpg", "/azul/baixo-azul4.jpg", "/azul/baixo-azul5.jpg", "/azul/baixo-azul6.jpg"],
+    images: ["/consultorio/1.jpeg", "/consultorio/3.jpg", "/consultorio/4.jpg", "/consultorio/8.jpg"],
   },
   {
     layout: "1x6",
     type: "equipment",
     title:
-      "Mustang Dourado, pronto pra fazer história. Madeira selecionada e acabamento impecável.",
-    image: "/bass/0.jpg",
+      "Eu quero ajudá-los a educar os seus pequeninos sobre o quão importante é cuidarmos da nossa saúde bucal.",
+    image: "/tati.jpg",
   },
   {
     layout: "1x6",
