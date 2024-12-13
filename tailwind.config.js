@@ -9,18 +9,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#E8B4BC",        // Rosa suave
+        primary: "#E8B4BC",  // Tom principal rosa suave
         background: {
-          light: "#2D1F20",        // Background escuro rosado
-          dark: "#1A1415",         // Versão ainda mais escura com tom rosado
+          light: "#FFF5F6",  // Fundo claro rosado
+          dark: "#a03e99",   // Versão escura mais suave
         },
         surface: {
-          light: "#F4D9DD",        // Rosa claro para superfícies
-          dark: "#3D2A2B",         // Superfície escura rosada
+          light: "#F4D9DD",  // Rosa mais claro para superfícies
+          dark: "#F4D9DD",   // Mantido igual para consistência
         },
         border: {
-          light: "#4A3435",        // Borda escura rosada
-          dark: "#1A1415",         // Borda mais escura
+          light: "#FFE4E8",  // Borda rosa claro
+          dark: "#2D2D2D",   // Versão escura
         },
       },
       fontFamily: {

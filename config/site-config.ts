@@ -74,7 +74,7 @@ const GridItems: GridItemInterface[] = [
       "Acompanhe meu Instagram para dicas de saúde bucal e novidades do consultório.",
     buttonTitle: "Seguidores",
     buttonLink: "https://www.instagram.com/dratatianasocio/",
-    buttonSecondaryText: "3.163",
+    buttonSecondaryText: "1.998",
     color: "rgba(104, 60, 190, 1)",
     backgroundColor: {
       light: "#f7e3fc",
