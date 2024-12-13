@@ -40,8 +40,8 @@ const sfPRO = localFont({
 });
 
 const siteUrl = "https://vercel.app";
-const description = "Especialistas na arte de criar baixos artesanais com alma vintage e personalidade única. Na AS Guitars, cada instrumento é uma obra-prima que combina a nostalgia dos clássicos com a inovação do design contemporâneo.";
-const title = "AS Guitars - Fabricação de Baixos";
+const description = "Especialista em odontopediatria, dedicada a criar experiências positivas e sorrisos saudáveis. No consultório da Dra. Tatiana, cada atendimento é personalizado, combinando técnica moderna com um ambiente acolhedor, proporcionando aos pequenos pacientes um cuidado especial desde a primeira infância.";
+const title = "Dra. Tatiana - Odontopediatria Especializada";
 
 export const metadata: Metadata = {
   title,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: '/shared.png',
         width: 1200,
         height: 630,
-        alt: 'AS Guitars',
+        alt: 'Dra. Tatiana - Odontopediatria Especializada',
       },
     ],
     locale: 'pt_BR',

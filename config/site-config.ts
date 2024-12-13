@@ -38,11 +38,11 @@ const GridItems: GridItemInterface[] = [
       dark: "#075e54",
     },
     icon: "whatsapp",
-    description: "Entre em contato agora e vamos criar juntos o instrumento perfeito para você.",
+    description: "Entre em contato agora e agende uma consulta.",
     color: "#25d366",
     buttonTitle: "17 99743-3628",
     buttonLink:
-      "https://api.whatsapp.com/send?phone=5517997433628.",
+      "https://api.whatsapp.com/send?phone=5517991414224",
     buttonSecondaryText: "",
   },
   {
@@ -71,9 +71,9 @@ const GridItems: GridItemInterface[] = [
     title: "Instagram",
     icon: "instagram",
     description:
-      "Acompanhe meu trabalho no Instagram para ver mais projetos e atualizações.",
+      "Acompanhe meu Instagram para dicas de saúde bucal e novidades do consultório.",
     buttonTitle: "Seguidores",
-    buttonLink: "https://www.instagram.com/as_guitars/",
+    buttonLink: "https://www.instagram.com/dratatianasocio/",
     buttonSecondaryText: "3.163",
     color: "rgba(104, 60, 190, 1)",
     backgroundColor: {
@@ -123,12 +123,12 @@ const GridItems: GridItemInterface[] = [
 ];
 
 export const siteConfig = {
-  creator: "AS Guitars",
-  title: "Fabricação de Baixos",
-  bio: "Cada instrumento é uma obra-prima que combina a nostalgia dos clássicos com a inovação do design contemporâneo.",
+  creator: "Dra. Tatiana",
+  title: "Odontopediatra 🐻",
+  bio: "Cada sorriso é único e merece um cuidado especial, combinando técnica moderna com um atendimento acolhedor e gentil.",
   location: "São José Rio Preto - SP",
   locationLink:
-    "https://www.google.com/maps/place/São+José+do+Rio+Preto+-+SP/data=!4m2!3m1!1s0x94bc52ce6910005f:0xb39d5c0e3b8c5675?sa=X&ved=1t:242&ictx=111",
-  email: "asguitars@gmail.com",
+    "https://maps.app.goo.gl/V67nKJ7QjabckVNK9",
+  email: "drtati@gmail.com",
   items: GridItems,
 } as const;

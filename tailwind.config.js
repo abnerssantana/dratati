@@ -9,18 +9,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#31511E",
+        primary: "#E8B4BC",  // Tom principal rosa suave
         background: {
-          light: "#F6FCDF",
-          dark: "#1A1A19",
+          light: "#FFF5F6",  // Fundo claro rosado
+          dark: "#2D2D2D",   // Versão escura mais suave
         },
         surface: {
-          light: "#859F3D",
-          dark: "#859F3D",
+          light: "#F4D9DD",  // Rosa mais claro para superfícies
+          dark: "#F4D9DD",   // Mantido igual para consistência
         },
         border: {
-          light: "rgb(218 230 174)",
-          dark: "#1A1A19",
+          light: "#FFE4E8",  // Borda rosa claro
+          dark: "#2D2D2D",   // Versão escura
         },
       },
       fontFamily: {
