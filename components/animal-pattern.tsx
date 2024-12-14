@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Bird, Cat, Dog, Rabbit, Squirrel } from 'lucide-react';
 import { useTheme } from "next-themes";
