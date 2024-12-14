@@ -48,7 +48,7 @@ const AnimalPattern = () => {
                   transform={`translate(${colIndex * spacing} ${rowIndex * spacing})`}
                 >
                   <Animal
-                    size={24}
+                    size={18}
                     className={isDark ? "text-neutral-500" : "text-neutral-300"}
                   />
                 </g>
