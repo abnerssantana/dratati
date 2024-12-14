@@ -138,7 +138,7 @@ export const siteConfig = {
   creator: "Dra. Tatiana",
   title: "Odontopediatra 🐻",
   bio: "Cada sorriso é único e merece um cuidado especial, combinando técnica moderna com um atendimento acolhedor e gentil.",
-  location: "São José Rio Preto - SP",
+  location: "Navarro Building. Sala 115",
   locationLink:
     "https://maps.app.goo.gl/V67nKJ7QjabckVNK9",
   email: "drtati@gmail.com",
