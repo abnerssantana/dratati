@@ -16,7 +16,7 @@ export const siteConfig = {
 // Then update left-panel.tsx:
 "use client";
 import { siteConfig } from "@/config/site-config";
-import { Mail, MapPin, Timer } from "lucide-react";
+import { Mail, MapPin, CalendarRange } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -53,7 +53,7 @@ const LeftPanel = () => {
         {/* Buttons Container */}
         <div className="flex flex-col gap-3 mt-6">
           <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
-            <Timer size="14" />
+            <CalendarRange size="14" />
             {siteConfig.timeweek}
           </div>
           <a
