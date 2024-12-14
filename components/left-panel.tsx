@@ -1,22 +1,7 @@
-// First, update site-config.ts by adding timeweek to the type and config:
-
-// In site-config.ts
-export const siteConfig = {
-  creator: "Mauro Brumato",
-  title: "Pintura Residencial & Pequenos Reparos",
-  bio: "Serviços de pintura residencial, reparos elétricos e hidráulicos eficientes para garantir que sua casa esteja sempre impecável.",
-  location: "São José Rio Preto - SP",
-  timeweek: "Seg-Sex: 8h-18h | Sáb: 8h-12h", // Add this line
-  locationLink:
-    "https://www.google.com/maps/place/São+José+do+Rio+Preto+-+SP/data=!4m2!3m1!1s0x94bc52ce6910005f:0xb39d5c0e3b8c5675?sa=X&ved=1t:242&ictx=111",
-  email: "maurobrumato@gmail.com",
-  items: GridItems,
-} as const;
-
-// Then update left-panel.tsx:
 "use client";
+
 import { siteConfig } from "@/config/site-config";
-import { Mail, MapPin, CalendarRange } from "lucide-react";
+import { Mail, MapPin, Timer } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -53,11 +38,13 @@ const LeftPanel = () => {
         {/* Buttons Container */}
         <div className="flex flex-col gap-3 mt-6">
           <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
-            <CalendarRange size="14" />
+            <Timer size="14" />
             {siteConfig.timeweek}
           </div>
           <a
             href={siteConfig.locationLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark"
           >
             <MapPin size="14" />
