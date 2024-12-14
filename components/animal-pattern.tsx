@@ -104,7 +104,7 @@ const AnimalPattern = () => {
                 >
                   <Animal
                     size={16}
-                    className={isDark ? "text-neutral-600" : "text-neutral-300"}
+                    className={isDark ? "text-neutral-400" : "text-neutral-300"}
                   />
                 </g>
               ))}
