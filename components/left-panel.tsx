@@ -1,6 +1,22 @@
+// First, update site-config.ts by adding timeweek to the type and config:
+
+// In site-config.ts
+export const siteConfig = {
+  creator: "Mauro Brumato",
+  title: "Pintura Residencial & Pequenos Reparos",
+  bio: "Serviços de pintura residencial, reparos elétricos e hidráulicos eficientes para garantir que sua casa esteja sempre impecável.",
+  location: "São José Rio Preto - SP",
+  timeweek: "Seg-Sex: 8h-18h | Sáb: 8h-12h", // Add this line
+  locationLink:
+    "https://www.google.com/maps/place/São+José+do+Rio+Preto+-+SP/data=!4m2!3m1!1s0x94bc52ce6910005f:0xb39d5c0e3b8c5675?sa=X&ved=1t:242&ictx=111",
+  email: "maurobrumato@gmail.com",
+  items: GridItems,
+} as const;
+
+// Then update left-panel.tsx:
 "use client";
 import { siteConfig } from "@/config/site-config";
-import { Mail, MapPin, Time } from "lucide-react";
+import { Mail, MapPin, Timer } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -18,36 +34,31 @@ const LeftPanel = () => {
             loading="eager"
             alt="avatar"
             placeholder="blur"
-            src="/avatar.jpg"
+            src="/pp-new3.png"
             width={125}
             height={125}
-            blurDataURL="/avatar.jpg"
-            className="rounded-full"
+            blurDataURL="/pp-new3.png"
           />
         </div>
         {/* Text Container */}
         <div className="my-6">
-          <div className="text-base font-medium text-primary dark:text-[#EDE0D4]">
+          <div className="text-base font-medium text-primary">
             {siteConfig.title}
           </div>
           <h1 className="mt-2 text-4xl font-bold">{siteConfig.creator}</h1>
-          <p className="text-lg font-light text-neutral-600 dark:text-white">
+          <p className="text-2xl font-light text-neutral-500">
             {siteConfig.bio}
           </p>
         </div>
         {/* Buttons Container */}
-        <div className="flex items-center gap-3 mt-6">
-          <p
-            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-[#EDE0D4] border rounded-md border-neutral-100 dark:border-neutral-800"
-          >
-            <Time size="14" />
+        <div className="flex flex-col gap-3 mt-6">
+          <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
+            <Timer size="14" />
             {siteConfig.timeweek}
-          </p>
-        </div>
-        <div className="flex items-center gap-3 mt-6">
+          </div>
           <a
-            href={`${siteConfig.locationLink}`}
-            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-[#EDE0D4] border rounded-md border-neutral-100 dark:border-neutral-800"
+            href={siteConfig.locationLink}
+            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark"
           >
             <MapPin size="14" />
             {siteConfig.location}
