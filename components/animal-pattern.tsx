@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Bird, Cat, Dog, Rabbit, Squirrel } from 'lucide-react';
+import { Bird, Cat, Dog, Rabbit, Squirrel, LucideIcon } from 'lucide-react';
 import { useTheme } from "next-themes";
 
 const AnimalPattern = () => {
@@ -8,12 +8,12 @@ const AnimalPattern = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
   const isDark = currentTheme === "dark";
 
-  const animals = [Bird, Cat, Dog, Rabbit, Squirrel];
+  const animals: LucideIcon[] = [Bird, Cat, Dog, Rabbit, Squirrel];
   const rows = 5;
   const spacing = 40;
 
-  // Função para embaralhar array
-  const shuffleArray = (array) => {
+  // Função para embaralhar array com tipo definido
+  const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -23,7 +23,7 @@ const AnimalPattern = () => {
   };
 
   // Gera linhas com animais em ordem aleatória
-  const generateRandomRows = () => {
+  const generateRandomRows = (): LucideIcon[][] => {
     return Array.from({ length: rows }).map(() => shuffleArray(animals));
   };
 
@@ -48,8 +48,8 @@ const AnimalPattern = () => {
                   transform={`translate(${colIndex * spacing} ${rowIndex * spacing})`}
                 >
                   <Animal
-                    size={18}
-                    className={isDark ? "text-neutral-500" : "text-neutral-300"}
+                    size={24}
+                    className={isDark ? "text-neutral-600" : "text-neutral-300"}
                   />
                 </g>
               ))}
