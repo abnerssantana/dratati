@@ -55,7 +55,7 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
       case '2x8':
         return 'h-[650px]';
       case '2x6':
-          return 'h-[420px]';  
+          return 'h-[450px]';  
       case '2x4':
         return 'h-[400px]';
       case '2x2':

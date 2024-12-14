@@ -129,7 +129,7 @@ const GridItems: GridItemInterface[] = [
     layout: "2x6",
     type: "equipment",
     title:
-      "Dentinho Nascendo",
+      "Você pode estar se sentindo perdida, calma, pode ser só o dentinho nascendo.",
     images: ["dente-nascendo.jpg"],
   },
 ];
