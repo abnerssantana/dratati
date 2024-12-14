@@ -15,7 +15,7 @@ const AnimalPattern = () => {
 
   // Função para verificar se um animal pode ser colocado em uma posição
   const canPlaceAnimal = (
-    grid: LucideIcon[][],
+    grid: (LucideIcon | undefined)[][],
     row: number,
     col: number,
     animal: LucideIcon
@@ -49,7 +49,9 @@ const AnimalPattern = () => {
 
   // Função para gerar grid com animais sem repetição
   const generateNonRepeatingGrid = (): LucideIcon[][] => {
-    const grid: LucideIcon[][] = Array(rows).fill(null).map(() => Array(cols).fill(null));
+    const grid: (LucideIcon | undefined)[][] = Array(rows)
+      .fill(undefined)
+      .map(() => Array(cols).fill(undefined));
     
     const fillGrid = (row: number, col: number): boolean => {
       if (col >= cols) {
@@ -69,7 +71,7 @@ const AnimalPattern = () => {
           if (fillGrid(row, col + 1)) {
             return true;
           }
-          grid[row][col] = null;
+          grid[row][col] = undefined;
         }
       }
       
@@ -77,7 +79,7 @@ const AnimalPattern = () => {
     };
     
     fillGrid(0, 0);
-    return grid;
+    return grid as LucideIcon[][];  // Safe cast since we know the grid is fully populated
   };
 
   const animalGrid = generateNonRepeatingGrid();
