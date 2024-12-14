@@ -48,8 +48,14 @@ const GridItems: GridItemInterface[] = [
   {
     layout: "2x7",
     type: "equipment",
+    title: "Obra de arte feita para verdadeiros apaixonados por música.",
+    video: "/1.mp4",
+  },
+  {
+    layout: "2x4",
+    type: "equipment",
     title:
-      "Essa combinação de verde com dourado tem seu charme.",
+      "Ambiente acolhedor e moderno, projetado especialmente para trazer conforto aos pequenos pacientes. Com decoração lúdica, tecnologia de ponta e uma atmosfera tranquila, uma experiência positiva para toda a família.",
     images: ["/consultorio/1.jpeg", "/consultorio/3.jpg", "/consultorio/4.jpg", "/consultorio/8.jpg"],
   },
   {
@@ -58,12 +64,6 @@ const GridItems: GridItemInterface[] = [
     title:
       "Eu quero ajudá-los a educar os seus pequeninos sobre o quão importante é cuidarmos da nossa saúde bucal.",
     image: "/tati.jpg",
-  },
-  {
-    layout: "1x6",
-    type: "equipment",
-    title: "Obra de arte feita para verdadeiros apaixonados por música.",
-    video: "/1.mp4",
   },
   {
     layout: "2x2",
@@ -84,12 +84,45 @@ const GridItems: GridItemInterface[] = [
   {
     layout: "2x1",
     type: "project",
-    title: "Acabamentos Exclusivos",
+    title: "Atendimento personalizado para bebês, crianças e gestantes",
     icon: "guitar",
     color: "#090707",
     backgroundColor: {
-      light: "#F4D9DD",
-      dark: "#9f86c0",
+      light: "#b9e3c6",
+      dark: "#abff4f",
+    },
+  },
+  {
+    layout: "2x1",
+    type: "project",
+    title: "Foco em prevenção e cuidados desde a primeira infância",
+    icon: "guitar",
+    color: "#090707",
+    backgroundColor: {
+      light: "#b9e3c6",
+      dark: "#abff4f",
+    },
+  },
+  {
+    layout: "2x1",
+    type: "project",
+    title: "Experiência em odontopediatria com abordagem lúdica e gentil",
+    icon: "guitar",
+    color: "#090707",
+    backgroundColor: {
+      light: "#b9e3c6",
+      dark: "#abff4f",
+    },
+  },
+  {
+    layout: "2x1",
+    type: "project",
+    title: "Consultório adaptado para o conforto dos pequenos pacientes",
+    icon: "guitar",
+    color: "#090707",
+    backgroundColor: {
+      light: "#b9e3c6",
+      dark: "#abff4f",
     },
   },
   {

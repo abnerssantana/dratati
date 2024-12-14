@@ -20,7 +20,7 @@ module.exports = {
         },
         border: {
           light: "#FFE4E8",  // Borda rosa claro
-          dark: "#231942",   // Versão escura
+          dark: "rgba(159, 130, 198, 1)",   // Versão escura
         },
       },
       fontFamily: {
