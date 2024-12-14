@@ -16,9 +16,9 @@ const AnimalPattern = () => {
     { icon: Squirrel }
   ];
 
-  const horizontalSpacing = 40; // Espaçamento entre ícones
-  const verticalSpacing = 16;   // Espaçamento entre linhas
-  const rows = 3;              // Número de linhas do padrão
+  const horizontalSpacing = 50; // Ajuste o espaçamento entre colunas
+  const verticalSpacing = 30;   // Ajuste o espaçamento entre linhas
+  const rows = 5;               // Aumente para mais linhas
 
   return (
     <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
@@ -39,7 +39,7 @@ const AnimalPattern = () => {
                 transform={`translate(${(col * horizontalSpacing) + (row * horizontalSpacing / 2)} ${row * verticalSpacing})`}
               >
                 <Icon
-                  size={16}
+                  size={20} // Tamanho do ícone ajustado
                   className={isDark ? "text-neutral-600" : "text-neutral-300"}
                 />
               </g>
