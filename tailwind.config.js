@@ -12,7 +12,7 @@ module.exports = {
         primary: "#E8B4BC",  // Tom principal rosa suave
         background: {
           light: "#FFF5F6",  // Fundo claro rosado
-          dark: "#a03e99",   // Versão escura mais suave
+          dark: "rgba(51, 12, 48, 1)",   // Versão escura mais suave
         },
         surface: {
           light: "#F4D9DD",  // Rosa mais claro para superfícies

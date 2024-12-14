@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { GridItemInterface } from '@/config/site-config';
-import VideoModal from './video-modal';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Maximize2, Minimize2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props {
   item: GridItemInterface;
@@ -11,8 +11,10 @@ interface Props {
 const ImageComparison: React.FC<Props> = ({ item }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [visible, setVisible] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const images = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
 
   useEffect(() => {
@@ -32,7 +34,31 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
     setVisible(true);
   }, []);
 
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   const getContainerHeight = () => {
+    if (isExpanded) return 'h-[80vh]';
+    
     switch (item.layout) {
       case '2x7':
         return 'h-[620px]';
@@ -50,25 +76,45 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
     
     if (item.video) {
       return (
-        <div 
-          className={`relative flex flex-col items-end justify-end w-full ${containerHeight} overflow-hidden cursor-pointer group`}
-          onClick={() => setIsModalOpen(true)}
+        <motion.div 
+          layout
+          className={`relative flex flex-col items-end justify-end w-full ${containerHeight} overflow-hidden`}
         >
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-neutral-950/98 to-neutral-950/99" />
           <video
+            ref={videoRef}
             className="absolute inset-0 z-0 w-full h-full object-cover"
             src={item.video}
             autoPlay
             loop
-            muted
+            muted={isMuted}
             playsInline
           />
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="bg-white/20 p-4 rounded-full">
-              {isMuted ? <VolumeX size={24} className="text-white" /> : <Volume2 size={24} className="text-white" />}
-            </div>
+          
+          {/* Video Controls */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 p-4 flex items-center gap-3">
+            <button
+              onClick={togglePlay}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            >
+              {isPlaying ? <Pause size={20} className="text-white" /> : <Play size={20} className="text-white" />}
+            </button>
+            
+            <button
+              onClick={toggleMute}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            >
+              {isMuted ? <VolumeX size={20} className="text-white" /> : <Volume2 size={20} className="text-white" />}
+            </button>
+            
+            <button
+              onClick={toggleExpand}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            >
+              {isExpanded ? <Minimize2 size={20} className="text-white" /> : <Maximize2 size={20} className="text-white" />}
+            </button>
           </div>
-        </div>
+        </motion.div>
       );
     } else if (images.length > 0 || item.image) {
       return (
@@ -89,10 +135,15 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
   };
 
   return (
-    <>
-      <div className="flex flex-col w-full h-full overflow-hidden rounded-lg">
+    <AnimatePresence>
+      <motion.div
+        layout
+        className={`flex flex-col w-full h-full overflow-hidden rounded-lg ${
+          isExpanded ? 'fixed inset-4 z-50 bg-white dark:bg-neutral-900' : ''
+        }`}
+      >
         {renderMedia()}
-        <div className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
+        <motion.div layout className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
           <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
           {item.equipments && item.equipments.length > 0 && (
             <div className="flex flex-wrap items-center gap-3">
@@ -106,19 +157,20 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
               ))}
             </div>
           )}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {item.video && (
-        <VideoModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          videoSrc={item.video}
-          isMuted={isMuted}
-          onToggleMute={() => setIsMuted(!isMuted)}
+      {/* Overlay when expanded */}
+      {isExpanded && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={toggleExpand}
         />
       )}
-    </>
+    </AnimatePresence>
   );
 };
 

@@ -88,8 +88,8 @@ const GridItems: GridItemInterface[] = [
     icon: "guitar",
     color: "#090707",
     backgroundColor: {
-      light: "#F6FCDF",
-      dark: "#859F3D",
+      light: "#F4D9DD",
+      dark: "#F4D9DD",
     },
   },
   {
