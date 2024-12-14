@@ -82,7 +82,7 @@ const GridItems: GridItemInterface[] = [
     color: "#FFFFFF",  // Texto branco para melhor contraste
     backgroundColor: {
       light: "#E8B4BC",  // Rosa suave
-      dark: "#3D2A2B",   // Rosa escuro
+      dark: "#E8B4BC",   // Rosa escuro
     },
   },
   {
@@ -93,7 +93,7 @@ const GridItems: GridItemInterface[] = [
     color: "#FFFFFF",
     backgroundColor: {
       light: "#B4D7BC",  // Verde suave
-      dark: "#2A3D2B",   // Verde escuro
+      dark: "#B4D7BC",   // Verde escuro
     },
   },
   {
@@ -104,7 +104,7 @@ const GridItems: GridItemInterface[] = [
     color: "#FFFFFF",
     backgroundColor: {
       light: "#E8C4B4",  // Pêssego suave
-      dark: "#3D2E2A",   // Pêssego escuro
+      dark: "#E8C4B4",   // Pêssego escuro
     },
   },
   {
@@ -115,7 +115,7 @@ const GridItems: GridItemInterface[] = [
     color: "#FFFFFF",
     backgroundColor: {
       light: "#B4C4E8",  // Azul suave
-      dark: "#2A2E3D",   // Azul escuro
+      dark: "#B4C4E8",   // Azul escuro
     },
   },
   {
