@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/config/site-config";
-import { Mail, MapPin, Timer } from "lucide-react";
+import { Mail, MapPin, CalendarRange } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -31,7 +31,7 @@ const LeftPanel = () => {
             {siteConfig.title}
           </div>
           <h1 className="mt-2 text-4xl font-bold">{siteConfig.creator}</h1>
-          <p className="text-2xl font-light text-neutral-500">
+          <p className="text-2xl font-light text-neutral-500 dark:text-neutral-50">
             {siteConfig.bio}
           </p>
         </div>
@@ -47,7 +47,7 @@ const LeftPanel = () => {
             rel="noopener noreferrer"
             className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark"
           >
-            <MapPin size="14" />
+            <CalendarRange size="14" />
             {siteConfig.location}
           </a>
         </div>

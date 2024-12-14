@@ -16,7 +16,7 @@ module.exports = {
         },
         surface: {
           light: "#F4D9DD",  // Rosa mais claro para superfícies
-          dark: "#9f86c0",   // Roxo
+          dark: "rgba(159, 130, 198, 1)",   // Roxo
         },
         border: {
           light: "#FFE4E8",  // Borda rosa claro
