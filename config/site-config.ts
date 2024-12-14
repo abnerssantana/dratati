@@ -78,7 +78,7 @@ const GridItems: GridItemInterface[] = [
     layout: "2x1",
     type: "project",
     title: "Atendimento personalizado para bebês, crianças e gestantes",
-    icon: "guitar",
+    icon: "contact",
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
@@ -100,7 +100,7 @@ const GridItems: GridItemInterface[] = [
     layout: "2x1",
     type: "project",
     title: "Experiência em odontopediatria com abordagem lúdica e gentil",
-    icon: "guitar",
+    icon: "heart",
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
@@ -111,7 +111,7 @@ const GridItems: GridItemInterface[] = [
     layout: "2x1",
     type: "project",
     title: "Consultório adaptado para o conforto dos pequenos pacientes",
-    icon: "guitar",
+    icon: "baby",
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
