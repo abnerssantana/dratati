@@ -89,7 +89,7 @@ const GridItems: GridItemInterface[] = [
     layout: "2x1",
     type: "project",
     title: "Foco em prevenção e cuidados desde a primeira infância",
-    icon: "Cake",
+    icon: "cake",
     color: "#FFFFFF",
     backgroundColor: {
       light: "#B4D7BC",  // Verde suave
