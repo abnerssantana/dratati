@@ -1,4 +1,4 @@
-export type GridItemLayout = "1x2" | "1x6" | "2x1" | "2x2" | "2x4" | "2x7";
+export type GridItemLayout = "1x2" | "1x6" | "2x1" | "2x2" | "2x4" | "2x8";
 export type GridItemType = "social" | "equipment" | "mentor" | "project";
 export type EqiupmentItem = {
   title: string;
@@ -53,7 +53,7 @@ const GridItems: GridItemInterface[] = [
     images: ["/consultorio/1.jpeg", "/consultorio/3.jpg", "/consultorio/4.jpg", "/consultorio/8.jpg"],
   },
   {
-    layout: "2x7",
+    layout: "2x8",
     type: "equipment",
     title: "Obra de arte feita para verdadeiros apaixonados por música.",
     video: "/1.mp4",
@@ -82,7 +82,7 @@ const GridItems: GridItemInterface[] = [
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
-      dark: "#abff4f",
+      dark: "rgb(104, 60, 190)",
     },
   },
   {
@@ -93,7 +93,7 @@ const GridItems: GridItemInterface[] = [
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
-      dark: "#abff4f",
+      dark: "rgb(104, 60, 190)",
     },
   },
   {
@@ -104,7 +104,7 @@ const GridItems: GridItemInterface[] = [
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
-      dark: "#abff4f",
+      dark: "rgb(104, 60, 190)",
     },
   },
   {
@@ -115,36 +115,22 @@ const GridItems: GridItemInterface[] = [
     color: "#090707",
     backgroundColor: {
       light: "#b9e3c6",
-      dark: "#abff4f",
+      dark: "rgb(104, 60, 190)",
     },
   },
   {
     layout: "1x6",
     type: "equipment",
     title:
-      "Precision Black Relic",
-    images: ["/blackrelic/1.jpg", "/blackrelic/2.jpg", "/blackrelic/3.jpg", "/blackrelic/4.jpg", "/blackrelic/5.jpg"],
+      "Arrancar o dente é um momento muito desafiador para as crianças.",
+    images: ["joca-modelo.jpg"],
   },
   {
     layout: "1x6",
     type: "equipment",
     title:
-      "Mustang Semi Acústico.",
-    images: ["/mustang/1.jpg", "/mustang/2.jpg", "/mustang/3.jpg", "/mustang/4.jpg", "/mustang/5.jpg", "/mustang/6.jpg"],
-  },
-  {
-    layout: "1x6",
-    type: "equipment",
-    title:
-      "Mustang Dourado",
-    images: ["/bass/1.jpg", "/bass/2.jpg", "/bass/3.jpg", "/bass/4.jpg", "/bass/0.jpg"],
-  },
-  {
-    layout: "1x6",
-    type: "equipment",
-    title:
-      "Jazzbass Imbuia Tigrada",
-    images: ["1.jpg", "2.jpg", "3.jpg"],
+      "Dentinho Nascendo",
+    images: ["dente-nascendo.jpg"],
   },
 ];
 
