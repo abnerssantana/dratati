@@ -17,12 +17,12 @@ const LeftPanel = () => {
           <Image
             priority
             loading="eager"
-            alt="avatar"
+            alt="Dra. Tatiana"
             placeholder="blur"
-            src="/pp-new3.png"
-            width={125}
-            height={125}
-            blurDataURL="/pp-new3.png"
+            src="/avatar.png"
+            width={130}
+            height={130}
+            blurDataURL="/avatar.png"
           />
         </div>
         {/* Text Container */}
@@ -31,7 +31,7 @@ const LeftPanel = () => {
             {siteConfig.title}
           </div>
           <h1 className="mt-2 text-4xl font-bold">{siteConfig.creator}</h1>
-          <p className="text-2xl font-light text-neutral-500 dark:text-neutral-50">
+          <p className="text-2xl font-light text-neutral-500 dark:text-slate-100">
             {siteConfig.bio}
           </p>
         </div>

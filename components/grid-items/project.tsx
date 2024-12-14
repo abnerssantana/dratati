@@ -13,8 +13,8 @@ const Project = ({ item }: { item: GridItemInterface }) => {
   
   return (
     <div className="flex items-center justify-between gap-4 pb-2">
-      {IconComponent && <div className="dark:text-neutral-50"><IconComponent /></div>}
-      <div className="w-full @lg:text-lg font-semibold">{item.title}</div>
+      {IconComponent && <div className="dark:text-black"><IconComponent /></div>}
+      <div className="w-full @lg:text-lg font-semibold dark:text-black">{item.title}</div>
       <div className="flex items-center gap-1">
         <div className="mt-[1px]">{item.stars}</div>
       </div>
