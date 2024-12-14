@@ -38,7 +38,7 @@ const LeftPanel = () => {
         {/* Buttons Container */}
         <div className="flex flex-col gap-3 mt-6">
           <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
-            <Timer size="14" />
+            <CalendarRange size="14" />
             {siteConfig.timeweek}
           </div>
           <a
