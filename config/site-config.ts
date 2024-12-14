@@ -79,7 +79,7 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Atendimento personalizado para bebês, crianças e gestantes",
     icon: "contact",
-    color: "#FFFFFF",  // Texto branco para melhor contraste
+    color: "#000000",  // Texto branco para melhor contraste
     backgroundColor: {
       light: "#E8B4BC",  // Rosa suave
       dark: "#E8B4BC",   // Rosa escuro
@@ -90,7 +90,7 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Foco em prevenção e cuidados desde a primeira infância",
     icon: "cake",
-    color: "#FFFFFF",
+    color: "#000000",
     backgroundColor: {
       light: "#B4D7BC",  // Verde suave
       dark: "#B4D7BC",   // Verde escuro
@@ -101,7 +101,7 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Experiência em odontopediatria com abordagem lúdica e gentil",
     icon: "heart",
-    color: "#FFFFFF",
+    color: "#000000",
     backgroundColor: {
       light: "#E8C4B4",  // Pêssego suave
       dark: "#E8C4B4",   // Pêssego escuro
@@ -112,7 +112,7 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Consultório adaptado para o conforto dos pequenos pacientes",
     icon: "baby",
-    color: "#FFFFFF",
+    color: "#000000",
     backgroundColor: {
       light: "#B4C4E8",  // Azul suave
       dark: "#B4C4E8",   // Azul escuro
