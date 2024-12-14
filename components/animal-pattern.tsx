@@ -32,7 +32,7 @@ const AnimalPattern = () => {
           {animals.map(({ icon: Icon }, index) => (
             <g 
               key={index} 
-              transform={`translate(${index * 32} ${index * 32})`}
+              transform={`translate(${index * 5} ${index * 5})`}
             >
               <Icon
                 size={16}
