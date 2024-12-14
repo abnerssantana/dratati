@@ -52,8 +52,8 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
 
   const getContainerHeight = () => {
     switch (item.layout) {
-      case '2x7':
-        return 'h-[620px]';
+      case '2x8':
+        return 'h-[650px]';
       case '2x4':
         return 'h-[400px]';
       case '2x2':
