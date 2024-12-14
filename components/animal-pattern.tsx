@@ -7,27 +7,80 @@ const AnimalPattern = () => {
   const { theme, systemTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   const isDark = currentTheme === "dark";
-
+  
   const animals: LucideIcon[] = [Bird, Cat, Dog, Rabbit, Squirrel];
   const rows = 5;
+  const cols = animals.length;
   const spacing = 40;
 
-  // Função para embaralhar array com tipo definido
-  const shuffleArray = <T,>(array: T[]): T[] => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
+  // Função para verificar se um animal pode ser colocado em uma posição
+  const canPlaceAnimal = (
+    grid: LucideIcon[][],
+    row: number,
+    col: number,
+    animal: LucideIcon
+  ): boolean => {
+    // Verifica horizontal (esquerda)
+    if (col > 0 && grid[row][col - 1] === animal) return false;
+    
+    // Verifica horizontal (direita)
+    if (col < cols - 1 && grid[row][col + 1] === animal) return false;
+    
+    // Verifica vertical (cima)
+    if (row > 0 && grid[row - 1][col] === animal) return false;
+    
+    // Verifica vertical (baixo)
+    if (row < rows - 1 && grid[row + 1][col] === animal) return false;
+    
+    // Verifica diagonal (superior esquerda)
+    if (row > 0 && col > 0 && grid[row - 1][col - 1] === animal) return false;
+    
+    // Verifica diagonal (superior direita)
+    if (row > 0 && col < cols - 1 && grid[row - 1][col + 1] === animal) return false;
+    
+    // Verifica diagonal (inferior esquerda)
+    if (row < rows - 1 && col > 0 && grid[row + 1][col - 1] === animal) return false;
+    
+    // Verifica diagonal (inferior direita)
+    if (row < rows - 1 && col < cols - 1 && grid[row + 1][col + 1] === animal) return false;
+
+    return true;
   };
 
-  // Gera linhas com animais em ordem aleatória
-  const generateRandomRows = (): LucideIcon[][] => {
-    return Array.from({ length: rows }).map(() => shuffleArray(animals));
+  // Função para gerar grid com animais sem repetição
+  const generateNonRepeatingGrid = (): LucideIcon[][] => {
+    const grid: LucideIcon[][] = Array(rows).fill(null).map(() => Array(cols).fill(null));
+    
+    const fillGrid = (row: number, col: number): boolean => {
+      if (col >= cols) {
+        col = 0;
+        row++;
+      }
+      if (row >= rows) {
+        return true;
+      }
+      
+      // Embaralha os animais para cada posição
+      const shuffledAnimals = [...animals].sort(() => Math.random() - 0.5);
+      
+      for (const animal of shuffledAnimals) {
+        if (canPlaceAnimal(grid, row, col, animal)) {
+          grid[row][col] = animal;
+          if (fillGrid(row, col + 1)) {
+            return true;
+          }
+          grid[row][col] = null;
+        }
+      }
+      
+      return false;
+    };
+    
+    fillGrid(0, 0);
+    return grid;
   };
 
-  const randomRows = generateRandomRows();
+  const animalGrid = generateNonRepeatingGrid();
 
   return (
     <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
@@ -36,11 +89,11 @@ const AnimalPattern = () => {
           id="animal-pattern"
           x="0"
           y="0"
-          width={animals.length * spacing}
+          width={cols * spacing}
           height={rows * spacing}
           patternUnits="userSpaceOnUse"
         >
-          {randomRows.map((rowAnimals, rowIndex) => (
+          {animalGrid.map((rowAnimals, rowIndex) => (
             <g key={rowIndex}>
               {rowAnimals.map((Animal, colIndex) => (
                 <g
@@ -48,7 +101,7 @@ const AnimalPattern = () => {
                   transform={`translate(${colIndex * spacing} ${rowIndex * spacing})`}
                 >
                   <Animal
-                    size={24}
+                    size={16}
                     className={isDark ? "text-neutral-600" : "text-neutral-300"}
                   />
                 </g>
