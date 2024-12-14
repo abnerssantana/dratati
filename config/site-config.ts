@@ -119,14 +119,14 @@ const GridItems: GridItemInterface[] = [
     },
   },
   {
-    layout: "1x6",
+    layout: "2x6",
     type: "equipment",
     title:
       "Arrancar o dente é um momento muito desafiador para as crianças.",
     images: ["joca-modelo.jpg"],
   },
   {
-    layout: "1x6",
+    layout: "2x6",
     type: "equipment",
     title:
       "Dentinho Nascendo",
