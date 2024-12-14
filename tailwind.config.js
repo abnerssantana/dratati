@@ -12,15 +12,15 @@ module.exports = {
         primary: "#E8B4BC",  // Tom principal rosa suave
         background: {
           light: "#FFF5F6",  // Fundo claro rosado
-          dark: "rgba(51, 12, 48, 1)",   // Versão escura mais suave
+          dark: "#9f86c0",   // Versão escura mais suave
         },
         surface: {
           light: "#F4D9DD",  // Rosa mais claro para superfícies
-          dark: "#F4D9DD",   // Mantido igual para consistência
+          dark: "#9f86c0",   // Roxo
         },
         border: {
           light: "#FFE4E8",  // Borda rosa claro
-          dark: "#2D2D2D",   // Versão escura
+          dark: "#231942",   // Versão escura
         },
       },
       fontFamily: {

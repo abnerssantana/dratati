@@ -89,7 +89,7 @@ const GridItems: GridItemInterface[] = [
     color: "#090707",
     backgroundColor: {
       light: "#F4D9DD",
-      dark: "#F4D9DD",
+      dark: "#9f86c0",
     },
   },
   {
