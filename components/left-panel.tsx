@@ -19,10 +19,10 @@ const LeftPanel = () => {
             loading="eager"
             alt="Dra. Tatiana"
             placeholder="blur"
-            src="/avatar.png"
+            src="/avatar.jpg"
             width={130}
             height={130}
-            blurDataURL="/avatar.png"
+            blurDataURL="/avatar.jpg"
           />
         </div>
         {/* Text Container */}

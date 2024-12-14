@@ -39,7 +39,7 @@ const sfPRO = localFont({
   variable: "--font-sfpro",
 });
 
-const siteUrl = "https://vercel.app";
+const siteUrl = "https://dratati.vercel.app";
 const description = "Especialista em odontopediatria, dedicada a criar experiências positivas e sorrisos saudáveis. No consultório da Dra. Tatiana, cada atendimento é personalizado, combinando técnica moderna com um ambiente acolhedor, proporcionando aos pequenos pacientes um cuidado especial desde a primeira infância.";
 const title = "Dra. Tatiana - Odontopediatria Especializada";
 
