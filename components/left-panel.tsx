@@ -1,6 +1,6 @@
 "use client";
 import { siteConfig } from "@/config/site-config";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Time } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -37,9 +37,17 @@ const LeftPanel = () => {
         </div>
         {/* Buttons Container */}
         <div className="flex items-center gap-3 mt-6">
+          <p
+            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-[#EDE0D4] border rounded-md border-neutral-100 dark:border-neutral-800"
+          >
+            <Time size="14" />
+            {siteConfig.timeweek}
+          </p>
+        </div>
+        <div className="flex items-center gap-3 mt-6">
           <a
             href={`${siteConfig.locationLink}`}
-            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md border-neutral-100 dark:border-neutral-800"
+            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-[#EDE0D4] border rounded-md border-neutral-100 dark:border-neutral-800"
           >
             <MapPin size="14" />
             {siteConfig.location}

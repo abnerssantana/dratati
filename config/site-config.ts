@@ -139,6 +139,7 @@ export const siteConfig = {
   title: "Odontopediatra 🐻",
   bio: "Cada sorriso é único e merece um cuidado especial, combinando técnica moderna com um atendimento acolhedor e gentil.",
   location: "Navarro Building. Sala 115",
+  timeweek: "Segunda a Sexta-feira: 09h00 às 19h00",
   locationLink:
     "https://maps.app.goo.gl/V67nKJ7QjabckVNK9",
   email: "drtati@gmail.com",
