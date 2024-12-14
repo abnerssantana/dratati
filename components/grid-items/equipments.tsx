@@ -34,6 +34,19 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
     setVisible(true);
   }, []);
 
+  useEffect(() => {
+    // Desabilita o scroll quando expandido
+    if (isExpanded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isExpanded]);
+
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -57,8 +70,6 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
   };
 
   const getContainerHeight = () => {
-    if (isExpanded) return 'h-[80vh]';
-    
     switch (item.layout) {
       case '2x7':
         return 'h-[620px]';
@@ -76,10 +87,7 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
     
     if (item.video) {
       return (
-        <motion.div 
-          layout
-          className={`relative flex flex-col items-end justify-end w-full ${containerHeight} overflow-hidden`}
-        >
+        <div className={`relative flex flex-col items-end justify-end w-full ${!isExpanded ? containerHeight : 'h-[80vh]'} overflow-hidden`}>
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-neutral-950/98 to-neutral-950/99" />
           <video
             ref={videoRef}
@@ -114,7 +122,7 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
               {isExpanded ? <Minimize2 size={20} className="text-white" /> : <Maximize2 size={20} className="text-white" />}
             </button>
           </div>
-        </motion.div>
+        </div>
       );
     } else if (images.length > 0 || item.image) {
       return (
@@ -135,42 +143,68 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
   };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        layout
-        className={`flex flex-col w-full h-full overflow-hidden rounded-lg ${
-          isExpanded ? 'fixed inset-4 z-50 bg-white dark:bg-neutral-900' : ''
-        }`}
-      >
-        {renderMedia()}
-        <motion.div layout className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
-          <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
-          {item.equipments && item.equipments.length > 0 && (
-            <div className="flex flex-wrap items-center gap-3">
-              {item.equipments.map((equipment, index) => (
-                <div
-                  className="px-2 py-1 text-sm font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
-                  key={index}
-                >
-                  {equipment.title}
-                </div>
-              ))}
-            </div>
-          )}
-        </motion.div>
-      </motion.div>
-
-      {/* Overlay when expanded */}
-      {isExpanded && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 z-40"
-          onClick={toggleExpand}
-        />
+    <>
+      {/* Card normal */}
+      {!isExpanded && (
+        <div className="flex flex-col w-full h-full overflow-hidden rounded-lg">
+          {renderMedia()}
+          <div className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
+            <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
+            {item.equipments && item.equipments.length > 0 && (
+              <div className="flex flex-wrap items-center gap-3">
+                {item.equipments.map((equipment, index) => (
+                  <div
+                    className="px-2 py-1 text-sm font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
+                    key={index}
+                  >
+                    {equipment.title}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       )}
-    </AnimatePresence>
+
+      {/* Card expandido */}
+      <AnimatePresence>
+        {isExpanded && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-[100]"
+              onClick={toggleExpand}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-4 z-[110] flex flex-col overflow-hidden rounded-lg bg-white dark:bg-neutral-900"
+            >
+              {renderMedia()}
+              <div className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
+                <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
+                {item.equipments && item.equipments.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-3">
+                    {item.equipments.map((equipment, index) => (
+                      <div
+                        className="px-2 py-1 text-sm font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
+                        key={index}
+                      >
+                        {equipment.title}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
