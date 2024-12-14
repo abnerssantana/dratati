@@ -29,7 +29,7 @@ const LeftPanel = () => {
         {/* Text Container with Glassmorphism */}
         <div className="relative my-6 p-6 rounded-xl overflow-hidden">
           {/* Glassmorphism Background */}
-          <div className="absolute inset-0 backdrop-blur-sm bg-white/30 dark:bg-neutral-950/30" />
+          <div className="absolute inset-0 backdrop-blur-sm bg-white/10 dark:bg-neutral-950/30" />
           {/* Gradient Border */}
           <div className="absolute inset-0 rounded-xl border border-white/20 dark:border-neutral-800/20" />
           {/* Content */}
