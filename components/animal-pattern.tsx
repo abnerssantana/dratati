@@ -16,7 +16,9 @@ const AnimalPattern = () => {
     { icon: Squirrel }
   ];
 
-  const spacing = 40; // Espaçamento uniforme entre os ícones
+  const horizontalSpacing = 40; // Espaçamento entre ícones
+  const verticalSpacing = 16;   // Espaçamento entre linhas
+  const rows = 3;              // Número de linhas do padrão
 
   return (
     <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
@@ -25,21 +27,23 @@ const AnimalPattern = () => {
           id="animal-pattern"
           x="0"
           y="0"
-          width="200"
-          height="200"
+          width={animals.length * horizontalSpacing}
+          height={rows * verticalSpacing}
           patternUnits="userSpaceOnUse"
           patternContentUnits="userSpaceOnUse"
         >
-          {animals.map(({ icon: Icon }, index) => (
-            <g
-              key={index}
-              transform={`translate(${index * spacing} ${index * spacing})`}
-            >
-              <Icon
-                size={16}
-                className={isDark ? "text-neutral-600" : "text-neutral-300"}
-              />
-            </g>
+          {Array.from({ length: rows }).map((_, row) => (
+            animals.map(({ icon: Icon }, col) => (
+              <g
+                key={`${row}-${col}`}
+                transform={`translate(${(col * horizontalSpacing) + (row * horizontalSpacing / 2)} ${row * verticalSpacing})`}
+              >
+                <Icon
+                  size={16}
+                  className={isDark ? "text-neutral-600" : "text-neutral-300"}
+                />
+              </g>
+            ))
           ))}
         </pattern>
         <rect width="100%" height="100%" fill="url(#animal-pattern)" />
