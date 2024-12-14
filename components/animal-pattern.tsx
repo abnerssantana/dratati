@@ -10,11 +10,11 @@ const AnimalPattern = () => {
   const isDark = currentTheme === "dark";
 
   const animals = [
-    { icon: Bird, offset: '0,0' },
-    { icon: Cat, offset: '32,32' },
-    { icon: Dog, offset: '64,0' },
-    { icon: Rabbit, offset: '0,64' },
-    { icon: Squirrel, offset: '64,64' }
+    { icon: Bird },
+    { icon: Cat },
+    { icon: Dog },
+    { icon: Rabbit },
+    { icon: Squirrel }
   ];
 
   return (
@@ -24,22 +24,22 @@ const AnimalPattern = () => {
           id="animal-pattern"
           x="0"
           y="0"
-          width="96"
-          height="96"
+          width="160"
+          height="160"
           patternUnits="userSpaceOnUse"
           patternContentUnits="userSpaceOnUse"
         >
-          {animals.map(({ icon: Icon, offset }, index) => {
-            const [x, y] = offset.split(',');
-            return (
-              <g key={index} transform={`translate(${x} ${y})`}>
-                <Icon
-                  size={16}
-                  className={isDark ? "text-neutral-800" : "text-neutral-300"}
-                />
-              </g>
-            );
-          })}
+          {animals.map(({ icon: Icon }, index) => (
+            <g 
+              key={index} 
+              transform={`translate(${index * 32} ${index * 32})`}
+            >
+              <Icon
+                size={16}
+                className={isDark ? "text-neutral-600" : "text-neutral-300"}
+              />
+            </g>
+          ))}
         </pattern>
         <rect width="100%" height="100%" fill="url(#animal-pattern)" />
       </svg>
