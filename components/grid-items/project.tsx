@@ -1,11 +1,11 @@
 import { GridItemInterface } from "@/config/site-config";
-import { Baby, Heart, ContactRound, Cake} from "lucide-react"; // Importe os ícones necessários
+import { Baby, Heart, ContactRound, Cake } from "lucide-react"; // Importe os ícones necessários
 
 const iconMap: { [key: string]: LucideIcon } = {
   baby: Baby,
   contact: ContactRound,
   heart: Heart,
-  cake: Cake
+  cake: Cake,
 };
 
 const Project = ({ item }: { item: GridItemInterface }) => {

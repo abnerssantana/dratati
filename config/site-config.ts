@@ -1,4 +1,4 @@
-export type GridItemLayout = "1x2" | "1x6" | "2x1" | "2x2" | "2x4" | "2x8";
+export type GridItemLayout = "1x2" | "1x6" | "2x1" | "2x2" | "2x4" | "2x6" | "2x8";
 export type GridItemType = "social" | "equipment" | "mentor" | "project";
 export type EqiupmentItem = {
   title: string;
@@ -79,10 +79,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Atendimento personalizado para bebês, crianças e gestantes",
     icon: "contact",
-    color: "#090707",
+    color: "#FFFFFF",  // Texto branco para melhor contraste
     backgroundColor: {
-      light: "#b9e3c6",
-      dark: "rgb(104, 60, 190)",
+      light: "#E8B4BC",  // Rosa suave
+      dark: "#3D2A2B",   // Rosa escuro
     },
   },
   {
@@ -90,10 +90,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Foco em prevenção e cuidados desde a primeira infância",
     icon: "guitar",
-    color: "#090707",
+    color: "#FFFFFF",
     backgroundColor: {
-      light: "#b9e3c6",
-      dark: "rgb(104, 60, 190)",
+      light: "#B4D7BC",  // Verde suave
+      dark: "#2A3D2B",   // Verde escuro
     },
   },
   {
@@ -101,10 +101,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Experiência em odontopediatria com abordagem lúdica e gentil",
     icon: "heart",
-    color: "#090707",
+    color: "#FFFFFF",
     backgroundColor: {
-      light: "#b9e3c6",
-      dark: "rgb(104, 60, 190)",
+      light: "#E8C4B4",  // Pêssego suave
+      dark: "#3D2E2A",   // Pêssego escuro
     },
   },
   {
@@ -112,10 +112,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Consultório adaptado para o conforto dos pequenos pacientes",
     icon: "baby",
-    color: "#090707",
+    color: "#FFFFFF",
     backgroundColor: {
-      light: "#b9e3c6",
-      dark: "rgb(104, 60, 190)",
+      light: "#B4C4E8",  // Azul suave
+      dark: "#2A2E3D",   // Azul escuro
     },
   },
   {
