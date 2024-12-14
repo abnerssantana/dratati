@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Bird, Cat, Dog, Rabbit, Squirrel } from 'lucide-react';
 import { useTheme } from "next-themes";
@@ -24,22 +22,22 @@ const AnimalPattern = () => {
           id="animal-pattern"
           x="0"
           y="0"
-          width="160"
-          height="160"
+          width="80"
+          height="80"
           patternUnits="userSpaceOnUse"
           patternContentUnits="userSpaceOnUse"
         >
-          {animals.map(({ icon: Icon }, index) => (
-            <g 
-              key={index} 
-              transform={`translate(${index * 5} ${index * 5})`}
-            >
-              <Icon
-                size={16}
-                className={isDark ? "text-neutral-600" : "text-neutral-300"}
-              />
-            </g>
-          ))}
+          <g>
+            {/* Top Row */}
+            <Bird size={16} className={isDark ? "text-neutral-600" : "text-neutral-300"} transform="translate(32, 0)" />
+            
+            {/* Middle Row */}
+            <Dog size={16} className={isDark ? "text-neutral-600" : "text-neutral-300"} transform="translate(0, 32)" />
+            <Cat size={16} className={isDark ? "text-neutral-600" : "text-neutral-300"} transform="translate(64, 32)" />
+            
+            {/* Bottom Row */}
+            <Rabbit size={16} className={isDark ? "text-neutral-600" : "text-neutral-300"} transform="translate(32, 64)" />
+          </g>
         </pattern>
         <rect width="100%" height="100%" fill="url(#animal-pattern)" />
       </svg>
