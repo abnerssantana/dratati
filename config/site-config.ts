@@ -55,7 +55,7 @@ const GridItems: GridItemInterface[] = [
   {
     layout: "2x8",
     type: "equipment",
-    title: "Obra de arte feita para verdadeiros apaixonados por música.",
+    title: "Prazer, Dra. Tati",
     video: "/1.mp4",
   },
   {
