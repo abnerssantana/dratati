@@ -46,12 +46,6 @@ const GridItems: GridItemInterface[] = [
     buttonSecondaryText: "",
   },
   {
-    layout: "2x7",
-    type: "equipment",
-    title: "Obra de arte feita para verdadeiros apaixonados por música.",
-    video: "/1.mp4",
-  },
-  {
     layout: "2x4",
     type: "equipment",
     title:
@@ -59,11 +53,10 @@ const GridItems: GridItemInterface[] = [
     images: ["/consultorio/1.jpeg", "/consultorio/3.jpg", "/consultorio/4.jpg", "/consultorio/8.jpg"],
   },
   {
-    layout: "1x6",
+    layout: "2x7",
     type: "equipment",
-    title:
-      "Eu quero ajudá-los a educar os seus pequeninos sobre o quão importante é cuidarmos da nossa saúde bucal.",
-    image: "/tati.jpg",
+    title: "Obra de arte feita para verdadeiros apaixonados por música.",
+    video: "/1.mp4",
   },
   {
     layout: "2x2",
