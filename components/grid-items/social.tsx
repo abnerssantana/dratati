@@ -13,7 +13,7 @@ const Social = ({ item }: { item: GridItemInterface }) => {
   const IconComponent = item.icon && iconComponents[item.icon];
 
   return (
-    <Link href={item.buttonLink ?? ""} target="_blank">
+    <Link href={item.buttonLink ?? ""} target="_blank" rel="noopener noreferrer">
       {/* Header */}
       <div className="flex items-center justify-between">
         {item.icon && IconComponent && (
